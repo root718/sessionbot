@@ -3,7 +3,7 @@ import logging
 from pyrogram import Client, idle
 from pyromod import listen  # type: ignore
 from pyrogram.errors import ApiIdInvalid, ApiIdPublishedFlood, AccessTokenInvalid
-
+from aiohttp import web
 
 logging.basicConfig(level=logging.INFO, encoding="utf-8", format="%(asctime)s - %(levelname)s - \033[32m%(pathname)s: \033[31m\033[1m%(message)s \033[0m")
 
@@ -28,5 +28,11 @@ if __name__ == "__main__":
     uname = app.me.username
     logging.info(f"@{uname} is now running!")
     idle()
-    # app.stop()
-    # logging.info("Bot stopped. Alvida!")
+    app.stop()
+    logging.info("Bot stopped. Alvida!")
+
+routes = web.RouteTableDef()
+
+@routes.get("/", allow_head=True)
+async def root_route_handler(request):
+    return web.json_response("Running")
