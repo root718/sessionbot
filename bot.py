@@ -30,9 +30,3 @@ if __name__ == "__main__":
     idle()
     app.stop()
     logging.info("Bot stopped. Alvida!")
-
-routes = web.RouteTableDef()
-
-@routes.get("/", allow_head=True)
-async def root_route_handler(request):
-    return web.json_response("Running")
