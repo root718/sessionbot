@@ -28,5 +28,5 @@ if __name__ == "__main__":
     uname = app.me.username
     logging.info(f"@{uname} is now running!")
     idle()
-    app.stop()
-    logging.info("Bot stopped. Alvida!")
+    # app.stop()
+    # logging.info("Bot stopped. Alvida!")
