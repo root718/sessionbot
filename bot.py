@@ -4,7 +4,7 @@ from pyrogram import Client, idle
 from pyromod import listen  # type: ignore
 from pyrogram.errors import ApiIdInvalid, ApiIdPublishedFlood, AccessTokenInvalid
 from aiohttp import web
-from plugins import web_server
+from StringSessionBot import web_server
 
 logging.basicConfig(level=logging.INFO, encoding="utf-8", format="%(asctime)s - %(levelname)s - \033[32m%(pathname)s: \033[31m\033[1m%(message)s \033[0m")
 
