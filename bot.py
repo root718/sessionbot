@@ -27,6 +27,10 @@ if __name__ == "__main__":
     except AccessTokenInvalid:
         raise Exception("Your BOT_TOKEN is not valid.")
     uname = app.me.username
+    app2 = web.AppRunner(await web_server())
+    await app2.setup()
+    bind_address = "0.0.0.0"
+    await web.TCPSite(app2, bind_address, PORT).start()
     logging.info(f"@{uname} is now running!")
     idle()
     app.stop()
